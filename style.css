@@ -1,8 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
 html{
     box-sizing: border-box;
 }
 body{
     margin:0;
     min-height:100vh;
-    background:dodgerblue;
+    background-color: #DFDBE5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ff0000' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    font-family : Madimi One , sans-serif;
+    font-weight:700;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quoteContainer{
+    display:none;
+    width:auto;
+    max-width:900px;
+    padding:20px 30px;
+    border-radius:10px;
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0px 10px 10px 10px rgba(0,0,0,0.2);
+}
+.quote-text{
+    font-size:2.75rem;
+}
+.fa-quote-left{
+    font-size:4rem;
+}
+
+.quote-author{
+    font-size:2rem;
+    font-weight:400;
+    font-style:italic;
+    margin: 15px auto;
+}
+
+.quote-buttons{
+    display:flex;
+    justify-content: space-between;
+}
+
+#new-quote , #twitter{
+    font-size:1.2rem;
+    border-radius:5px;
+    padding:5px 15px;
+    box-shadow: 0px 2.5px 0px rgba(0,0,0,0.65);
+    font-family: Madimi One;
+    transition: all 0.05s;
+}
+#new-quote:hover , #twitter:hover{
+    filter:brightness(120%);
+}
+#new-quote:active , #twitter:active{
+    box-shadow:none;
+    transform : translate(0 , 0.1rem)
+}
+#twitter{
+    color:dodgerblue
+}
+
+.loader{
+    border : 15px solid white;
+    border-top-color:rgb(255 ,0,0 , 0.5);
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    animation: loader 0.5s linear infinite;
+}
+
+@keyframes loader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@media screen and (max-width:1000px){
+    .quoteContainer{
+        margin: auto 20px;
+    }
+    .quote-text{
+        font-size: 2.5rem;
+    }
 }
